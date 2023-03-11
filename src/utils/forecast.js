@@ -2,7 +2,7 @@ const request = require("request");
 
 const forecast = (latitude, longitude, callback) => {
   const url =
-    "http://api.weatherstack.com/current?access_key=e84129bc20b99e3b1452c36379b4e3ff&query=" +
+    "http://api.weatherstack.com/current?access_key=668916c73a1dfdefd5cb0e649cb67ed3&query=" +
     latitude +
     "," +
     longitude +
@@ -29,8 +29,9 @@ const forecast = (latitude, longitude, callback) => {
           body.current.temperature +
           " degrees Celsius. It feels like " +
           body.current.feelslike +
-          " degrees Celsius. Humidity is " +
-          body.current.humidity
+          " degrees Celsius. The humidity is " +
+          body.current.humidity +
+          " %."
       );
     }
   });
