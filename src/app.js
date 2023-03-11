@@ -9,6 +9,9 @@ const hbs = require("hbs");
 //console.log(path.join(__dirname, "../public")); //function that returns the final path
 
 const app = express(); //creating a new express application
+
+const port = process.env.PORT || 3000;
+
 //Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, "../public"); //path to the public folder cannot be relative, needs to be an absolute path to the root of your machine
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -124,6 +127,6 @@ app.get("*", (req, res) => {
 });
 
 //starts up the server
-app.listen(3000, () => {
-  console.log("Server is up on port 3000");
+app.listen(port, () => {
+  console.log("Server is up on port " + port);
 });
